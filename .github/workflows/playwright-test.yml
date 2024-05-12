@@ -23,7 +23,6 @@ jobs:
               with: 
                 ref: gh-pages
                 path: gh-pages
-                token: ${{ secrets.TOKEN }}
                 
             - name: Allure Report action from marketplace
               uses: simple-elf/allure-report-action@master
@@ -37,6 +36,6 @@ jobs:
             - name: Deploy report to Github Pages
               uses: peaceiris/actions-gh-pages@v2
               env:
-                personal_token: ${{ secrets.TOKEN }}
+                personal_token: ${{ secrets.PERSONAL_TOKEN }}
                 publish_branch: gh-pages
                 publish_dir: allure-history
